@@ -15,6 +15,8 @@ const typeDefs = gql`
   }
 `;
 
+const randomUserAPI = new RandomUserDataSource();
+
 const resolvers = {
   Query: {
     randomPerson: async () => {
@@ -23,7 +25,7 @@ const resolvers = {
       return data.results;
     },
     randomPerson2: (_, __, { dataSources }) => {
-      return dataSources.randomUserAPI.getPerson();
+      return randomUserAPI.getPerson();
     }
   }
 };
@@ -32,7 +34,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => ({
-    randomUserAPI: new RandomUserDataSource()
+//    randomUserAPI: new RandomUserDataSource()
   })
 });
 
