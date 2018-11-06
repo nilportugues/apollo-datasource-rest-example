@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^1.18.4",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.2"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@types/node-fetch": "^2.1.2",
     "apollo-datasource-rest": "^0.1.5",
@@ -17,6 +13,6 @@
     "node-fetch": "^2.2.0"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node index.ts"
+    "start": "node index.js"
   }
 }

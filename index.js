@@ -1,6 +1,6 @@
-import { ApolloServer, gql, IResolverObject } from "apollo-server";
-import fetch from "node-fetch";
-import { RandomUserDataSource } from "./RandomUserDataSource";
+const  fetch = require("node-fetch");
+const { ApolloServer, gql, IResolverObject } = require("apollo-server");
+const RandomUserDataSource = require("./RandomUserDataSource");
 
 const typeDefs = gql`
   type Person {
@@ -15,7 +15,7 @@ const typeDefs = gql`
   }
 `;
 
-const resolvers: IResolverObject = {
+const resolvers = {
   Query: {
     randomPerson: async () => {
       const response = await fetch("https://api.randomuser.me/");

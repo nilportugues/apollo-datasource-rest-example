@@ -1,6 +1,6 @@
-import { RESTDataSource } from "apollo-datasource-rest";
+const { RESTDataSource } = require("apollo-datasource-rest");
 
-export class RandomUserDataSource extends RESTDataSource {
+class RandomUserDataSource extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = "https://api.randomuser.me/";
@@ -11,3 +11,6 @@ export class RandomUserDataSource extends RESTDataSource {
     return results;
   }
 }
+
+
+module.exports = RandomUserDataSource
